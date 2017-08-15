@@ -2,13 +2,13 @@
 var button= document.getElementById('counter');
 button.onclick=function(){
     // create a request object
-    var request= newXMLHttpRequest();
+    var request= new XMLHttpRequest();
     // Capture the response and store it in a variable
     request.onreadystatechange = function(){
-        if(request.readyState==XMLHttpRequest.Done){
+        if(request.readyState === XMLHttpRequest.DONE){
         //take some action
-        if (request.status==200){
-            var counter=request.responseText;
+        if (request.status === 200){
+            var counter = request.responseText;
              var span=document.getElementById('count');
              span.innerHTML=counter.toString();
         }
@@ -19,4 +19,4 @@ button.onclick=function(){
 request.open('GET','http://varshaagrawal2424.imad.hasura-app.io/counter',true);
 request.send(null);
 };
-    
+      
